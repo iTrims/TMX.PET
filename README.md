@@ -31,9 +31,12 @@ Task Manager X (TMX) is a web API for task management, designed as a backend-foc
 To get started with TMX, follow these steps:
 
 1. Clone the TMX repository to your local machine.
-2. Configure the necessary environment variables and connection strings for your database and SMTP server (if applicable).
+2. Configure the necessary environment variables and connection strings for your database and SMTP server (appsettings.json).
 3. Build and run the TMX project.
-4. To interact with the TMX API's, you can use swagger, swagger also contains a user authorization panel.
+4. Since TMX is developed by a junior backend developer, this project doesn't have a frontend part, and the interaction interface will be presented through Swagger UI in your browser..
+
+### Known Issues
+The "Logout" button in Swagger UI may not work as expected. As this issue is inherent to Swagger UI, it cannot be fixed directly. To log out, manually enter the logout URL: https://localhost:7002/connect/endsession.
 
 ### API Documentation
 TMX exposes a set of APIs for task management. Below are the key endpoints:
@@ -46,6 +49,6 @@ TMX exposes a set of APIs for task management. Below are the key endpoints:
 
 
 
-### License
+## License
 TMX is released under the MIT License.
 
