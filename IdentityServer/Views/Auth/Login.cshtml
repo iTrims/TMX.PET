@@ -1,0 +1,33 @@
+﻿@model LoginViewModel
+
+<head>
+    <link href="@Url.Content("~/css/app.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<div class="container">
+    <h1 class="header">Login</h1>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <form asp-controller="Auth" asp-action="Login" method="post">
+        <input type="hidden" asp-for="ReturnUrl"/> 
+
+        <div class="form-group">
+            <label class="label">Email</label>
+            <input asp-for="Email" class="input" />
+            <span asp-validation-for="Email" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="label">Password</label>
+            <input asp-for="Password" class="input" />
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="button">Sign in</button>
+        </div>
+
+        <a asp-controller="Auth" asp-route-returnUrl ="@Model.ReturnUrl" asp-action="Register" 
+        class="switch-link">Register</a>
+    </form>
+</div>
+
